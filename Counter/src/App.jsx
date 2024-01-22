@@ -1,13 +1,27 @@
 import "./App.css";
-
+import React from "react";
 function App() {
+  const [count, setCount] = React.useState(0);
+
+  function add() {
+    setCount(count + 1);
+  }
+
+  function minus() {
+    setCount(count - 1);
+  }
+
   return (
     <div className="counter">
-      <button className="counter--minus">–</button>
+      <button className="counter--minus" onClick={minus}>
+        –
+      </button>
       <div className="counter--count">
-        <h1>0</h1>
+        <h1>{count}</h1>
       </div>
-      <button className="counter--plus">+</button>
+      <button className="counter--plus" onClick={add}>
+        +
+      </button>
     </div>
   );
 }
